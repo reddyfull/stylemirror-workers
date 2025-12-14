@@ -10,7 +10,7 @@ preview_id = "088aa57d7c2c428d9f1a932b431a0d52"
 
 # Environment variables (non-sensitive)
 [vars]
-ALLOWED_ORIGINS = "https://stylemirror.lovable.app,https://stylemirror.app,http://localhost:3000"
+ALLOWED_ORIGINS = "https://stylemirror.reddyfull.workers.dev,https://stylemirror.lovable.app,http://localhost:3000"
 N8N_BASE_URL = "https://reddyfull.app.n8n.cloud"
 
 # Observability
