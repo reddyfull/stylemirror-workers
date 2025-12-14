@@ -2,9 +2,6 @@ name = "stylemirror-api"
 main = "src/index.ts"
 compatibility_date = "2024-01-01"
 
-# Account ID - set via env or wrangler login
-# account_id = "YOUR_ACCOUNT_ID"
-
 # KV Namespace for rate limiting
 [[kv_namespaces]]
 binding = "RATE_LIMIT_KV"
@@ -15,35 +12,6 @@ preview_id = "088aa57d7c2c428d9f1a932b431a0d52"
 [vars]
 ALLOWED_ORIGINS = "https://stylemirror.lovable.app,https://stylemirror.app,http://localhost:3000"
 N8N_BASE_URL = "https://reddyfull.app.n8n.cloud"
-
-# Production environment
-[env.production]
-name = "stylemirror-api"
-routes = [
-  { pattern = "api.stylemirror.app/*", zone_name = "stylemirror.app" }
-]
-
-[env.production.vars]
-ALLOWED_ORIGINS = "https://stylemirror.app,https://www.stylemirror.app"
-
-# Staging environment  
-[env.staging]
-name = "stylemirror-api-staging"
-routes = [
-  { pattern = "api-staging.stylemirror.app/*", zone_name = "stylemirror.app" }
-]
-
-[env.staging.vars]
-ALLOWED_ORIGINS = "https://staging.stylemirror.app,https://stylemirror.lovable.app,http://localhost:3000"
-
-# Secrets (set via wrangler secret put):
-# - SERPAPI_KEY
-# - OPENROUTER_KEY  
-# - PERPLEXITY_KEY
-
-# Build configuration
-[build]
-command = "npm run build"
 
 # Observability
 [observability]
