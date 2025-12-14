@@ -1,0 +1,45 @@
+{
+  "name": "stylemirror-workers",
+  "version": "1.0.0",
+  "description": "StyleMirror API Gateway - Cloudflare Workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy --env production",
+    "tail": "wrangler tail",
+    "tail:staging": "wrangler tail --env staging",
+    "tail:production": "wrangler tail --env production",
+    "types": "wrangler types",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src/**/*.ts",
+    "setup:kv": "wrangler kv:namespace create RATE_LIMIT_KV && wrangler kv:namespace create RATE_LIMIT_KV --preview",
+    "secret:serpapi": "wrangler secret put SERPAPI_KEY",
+    "secret:openrouter": "wrangler secret put OPENROUTER_KEY",
+    "secret:perplexity": "wrangler secret put PERPLEXITY_KEY"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "api-gateway",
+    "stylemirror",
+    "shopping"
+  ],
+  "author": "Sri",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.91.0",
+    "vitest": "^2.1.5",
+    "@types/node": "^20.10.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "prettier": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
